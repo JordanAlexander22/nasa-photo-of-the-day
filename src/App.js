@@ -8,9 +8,9 @@ function App() {
 
   const getPics = () => {
     axios
-      .get(`http://moontrek.jpl.nasa.gov/trektiles/Moon/EQ/LRO_WAC_Mosaic_Global_303ppd_v02/1.0.0/default/default028mm/0/0/0.jpg`)
-      .then(nasaData => {
-        console.log(nasaData);
+      .get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=DEMO_KEY`)
+      .then(response => {
+        console.log(response);
         setnasaData(nasaData.data);
       })
       .catch(fail => console.log("failed to work"));
