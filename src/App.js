@@ -8,10 +8,10 @@ function App() {
 
   const getPics = () => {
     axios
-      .get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=DEMO_KEY`)
+      .get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
       .then(response => {
         console.log(response);
-        setnasaData(nasaData.data);
+        setnasaData(response.data);
       })
       .catch(fail => console.log("failed to work"));
   };
@@ -26,6 +26,9 @@ function App() {
       <p>
         lets take a look at what we can see outside of this world today!
       </p>
+      <div>
+        <img src={nasaData.hdurl} width={"480px"} />
+      </div>
     </div>
   );
 }
