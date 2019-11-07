@@ -2,6 +2,8 @@ import React from "react";
 import "./App.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import styled from "styled-components";
+import NasaDivs from './NasaDivs';
 
 function App() {
   const [nasaData, setnasaData]= useState([]);
@@ -24,11 +26,9 @@ function App() {
     <div className="App">
       <h1>Greetings from Outer Space!</h1>
       <p>
-        lets take a look at what we can see outside of this world today!
+        This is the picture of the day from NASA!
       </p>
-      <div>
-        <img src={nasaData.hdurl} width={"480px"} />
-      </div>
+      <NasaDivs Nasa={nasaData} />
     </div>
   );
 }
