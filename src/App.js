@@ -4,6 +4,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import NasaDivs from './NasaDivs';
+import {Title} from './topPage';
+import {Header} from './topPage';
 
 function App() {
   const [nasaData, setnasaData]= useState([]);
@@ -24,10 +26,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Greetings from Outer Space!</h1>
-      <p>
+      <Title>Greetings from Outer Space!</ Title>
+      <Header>
         This is the picture of the day from NASA!
-      </p>
+      </Header>
       <NasaDivs Nasa={nasaData} />
     </div>
   );
